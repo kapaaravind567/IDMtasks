@@ -1,0 +1,32 @@
+<html>
+<head>
+<script>
+	function validateForm() {
+		let name = document.forms[0].uname.value;
+		let pass = document.forms[0].pass.value;
+		if (name.length == 0 || name == "") {
+			document.getElementById("nameError").innerHTML = "<font color=red>name cant be blank</font>";
+			return false;
+		} else if (pass.length < 6) {
+			document.getElementById("passwordError").innerHTML = "<font color=red>password too short</font>";
+			return false;
+		}
+	}
+</script>
+<body>
+	<form onsubmit="return validateForm()" action="AravindLogin">
+		<div>
+			<label>Enter username :</label><input type="text" name="uname">
+			<span id="nameError" name="name"></span>
+		</div>
+		<div>
+			<label>password</label> <input type="password" name="pass"> <span
+				id="passwordError"></span>
+		</div>
+		<div>
+			<input type="submit" value="register">
+		</div>
+	</form>
+</body>
+</head>
+</html>
